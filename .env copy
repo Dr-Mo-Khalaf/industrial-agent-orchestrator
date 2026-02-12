@@ -1,0 +1,8 @@
+# LLM Keys
+OPENAI_API_KEY="sk-..."
+
+# Vector DB Settings
+VECTOR_DB_PATH="./data/chroma_db"
+
+# Observability
+LOG_LEVEL="INFO"

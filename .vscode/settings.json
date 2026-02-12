@@ -1,0 +1,5 @@
+{
+    "python-envs.pythonProjects": []
+
+  "python.analysis.extraPaths": ["."]
+}

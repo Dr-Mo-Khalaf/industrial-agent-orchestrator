@@ -1,0 +1,34 @@
+<rail version="0.1">
+    <!-- This output structure enforces the JSON schema -->
+    <output>
+        <string name="summary" description="Brief technical summary of the situation." />
+        
+        <!-- Enforce specific Enum values -->
+        <string name="risk_level" format="valid-choices: {choices: [LOW, MEDIUM, HIGH]}" 
+                on-fail-valid-choices="reask" />
+        
+        <string name="recommended_action" description="Specific next step for the engineer." />
+        
+        <bool name="is_safe" description="Final boolean verdict on safety." />
+    </output>
+
+    <!-- 
+      The 'input' section allows us to sanitize the PROMPT or the OUTPUT.
+      Here we ensure no PII leaks into the final JSON logs.
+    -->
+    <prompt>
+        The output should only contain valid JSON. 
+        Ensure no emails, phone numbers, or names are included in the summary.
+    </prompt>
+    
+    <!-- 
+      Instruction for the Guard to scan for PII in the LLM output 
+      before it is returned to the user.
+    -->
+    <validators>
+        <!-- If PII is detected in the 'summary', mask it -->
+        <validator name="pii" on-fail="fix">
+            <field name="summary" />
+        </validator>
+    </validators>
+</rail>
