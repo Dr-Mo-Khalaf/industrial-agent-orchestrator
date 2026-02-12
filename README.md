@@ -1,6 +1,6 @@
 Here's the complete Markdown content ready for your `README.md` file:
 
-```markdown
+
 # 🏗️ Industrial Agent Orchestrator
 
 An enterprise-grade **Multi-Agent System** designed for the Energy & Oil sector. This project acts as a "Master Agent" orchestration layer that governs task-specific tools (Simulators, RAG) with strict industrial safety verification and human-in-the-loop (HITL) compliance.
@@ -10,7 +10,7 @@ An enterprise-grade **Multi-Agent System** designed for the Energy & Oil sector.
 ![LangChain](https://img.shields.io/badge/LangChain-Latest-orange?logo=langchain)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
----
+
 
 ## 🎯 Project Overview
 
@@ -214,4 +214,5 @@ uv run pytest
 
 This project is licensed under the MIT License.
 ```
+
 
